@@ -1,0 +1,222 @@
+
+.navigation {
+  height: 90px;
+  background: transparent;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-top:45px;
+    padding-bottom: 90px;
+  overflow: none;
+    
+}
+
+.nav-container {
+  max-width: 1300px;
+    display: block;
+}
+
+img.brandLogo{
+    height: 70px;
+    position: relative;
+    left: -20px;
+
+}
+
+.brand {
+  position: relative;
+  padding-left: 40px;
+    padding-top: 5px;
+  float: left;
+  text-transform: uppercase;
+  font-size: 1.4em;
+    margin: 0;
+}
+.brand a,
+.brand a:visited {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.brandLogo{
+    height: 20px;
+}
+
+.brand{
+    margin-top:6px;
+    padding-top: 0;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  height: 71px;
+  width: 71px;
+}
+
+.liIconBottom{
+    position: relative;
+    text-align: center;
+    float: right;
+}
+
+
+.liIconTop{
+    float:right;
+    position: relative;
+    top: -50px;
+    
+}
+
+nav {
+    width: 100%;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 45px;
+  background: transparent;
+  color: #f9f9f9;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: transparent;
+  color: #f9f9f9;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.loginImg{
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top:4px;
+    left:-4px;
+}
+
+
+@media only screen and (max-width: 769px) {
+    .navigation{
+/*        font-size: 4em;*/
+        z-index: 3;
+        height: 70px;
+    } 
+  .nav-mobile {
+    display: block;
+  }
+
+.nav-mobile{
+    margin-top: -5px;
+}
+    
+.liIconBottom{
+    position: relative;
+    top: 0;
+    font-size: 40px;
+    padding: 20px;
+}
+/*
+    .liIconTop{
+    float:none;
+    position: relative;
+    top:0;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    margin-bottom: 70px;
+    border-bottom: 3px solid #f9f9f9b3; 
+
+}
+*/
+    
+  nav {
+    width: 100%;
+    margin-top: -27px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding:10px;
+    line-height: 2em;
+  }
+  nav ul li ul li a {
+    padding-left: 50px;
+  }
+    
+}
+
+@media screen and (min-width: 769px) {
+  .nav-list {
+    display: block !important;
+  }
+    
+}
+
+
+#nav-toggle {
+  position: absolute;
+  left: 0px;
+  top: 20px;
+  cursor: pointer;
+  padding: 20px 35px 26px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 9px;
+  width: 50px;
+  background: #f9f9f9;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -15px;
+}
+#nav-toggle span:after {
+  bottom: -15px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}

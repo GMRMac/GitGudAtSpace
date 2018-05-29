@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/library.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
+</head>
+<body onresize="logoPlacement()" onload="logoPlacement()">
+    <div class="container">
+        <div class="logoImg"><a href="index.html"><img src="img/graph/logo.svg" alt="Logo"></a></div>
+        <section class="navigation">
+            <div class="nav-container">
+<!--
+                <div class="brand">     
+                    <a href="index.html"><img class="brandLogo" src="Images/mobile_logo_white.svg" height="70" style="position:relative; left:-20px;" alt="Acos-logo"></a>
+                </div>
+-->
+                <nav>
+                    <div class="nav-mobile">
+                        <a id="nav-toggle" href="#!"><span></span></a>
+                    </div>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="timeline.html" class="liIconBottom avtiveMenu">Timeline</a>
+                        </li>
+                        <li>
+                            <a href="missions.html" class="liIconBottom">Missions</a>
+                        </li>
+                    </ul>
+<!--
+                    <ul class="nav-list" >
+                        <li class="liIconTop">
+                            <a class="cbg-ig-grid-A" href="logginn.html"><img class="loginImg" src="Images/LOGIN.svg">Logg inn</a>
+                        </li>
+                    </ul>
+-->
+                </nav>
+            </div>
+        </section>
+        
+        <h2>Timeline</h2>
+        <footer>
+            here comes a footer, idk yet
+        </footer>
+    </div>
+
+<!--
+    <h1>countdown</h1>
+    <div id="countdown"></div>
+    <h1>upcomming launches</h1>
+    <div id="launches"></div>
+    <h1>past launches</h1>
+    <div id="pastLaunches"></div>
+-->
+
+    <script src="script/upcomming.js"></script>
+    <script src="script/menu.js"></script>
+    <script>
+        function logoPlacement(){
+            var logoWidth = document.getElementsByClassName("container")[0].offsetWidth;
+            var logoW = document.getElementsByClassName("logoImg")[0].offsetWidth;
+            var logo = document.getElementsByClassName("logoImg")[0];
+            logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
+            console.log(logoWidth);
+        }
+    </script>
+    <script src="script/countdown.js"></script>
+</body>

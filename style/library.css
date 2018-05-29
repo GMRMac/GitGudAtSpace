@@ -1,0 +1,79 @@
+div.container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.row {
+    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 879px){
+
+  .row .collum-tablet-1, .row .collum-tablet-11, .row .collum-tablet-10, .row .collum-tablet-9, .row .collum-tablet-8, .row .collum-tablet-7, .row .collum-tablet-6, .row .collum-tablet-5, .row .collum-tablet-4, .row .collum-tablet-3, .row .collum-tablet-2, .row .collum-tablet-1 {
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 880px) {
+
+.collum-tablet-1{
+width: 8.33333333333333333333333333333333333333333333%;
+}
+
+.collum-tablet-2{
+    width: 16.6666666666666666666666666666666666666666666%;
+}
+
+.collum-tablet-3{
+    width: 25%;
+    display: block;
+}
+
+.collum-tablet-4{
+    width: 33.333333333333333333333333333333333333333333%;
+    display: block;
+}
+
+.collum-tablet-5{
+    width: 41.666666666666666666666666666666666666666666%;
+    display: block;
+}
+
+.collum-tablet-6{
+    width: 50;
+    display: block;
+}
+
+.collum-tablet-7{
+    width: 58.333333333333333333333333333333333333333333%;
+    display: block;
+}
+
+.collum-tablet-8{
+    width: 66.666666666666666666666666666666666666666666%;
+    display: block;
+}
+
+.collum-tablet-9{
+    width: 75%;
+    display: block;
+}
+
+.collum-tablet-10{
+    width: 83.333333333333333333333333333333333333333333%;
+    display: block;
+}
+
+.collum-tablet-11{
+    width: 91.666666666666666666666666666666666666666666%;
+    display: block;
+}
+
+.collum-tablet-12{
+    width: 100%;
+    display: block;
+}
+}
