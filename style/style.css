@@ -26,7 +26,7 @@ footer, header, hgroup, menu, nav, section {
 
 
 
-body {
+body { 
     font-family: 'Work Sans', sans-serif;
     font-weight: 200;
     font-size: 28px;
@@ -52,6 +52,21 @@ table {
   box-sizing: border-box;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
 /** HERE STARTS THE STYLING **/
 
 body{
@@ -69,7 +84,8 @@ body{
 
 h2{
     text-align: center;
-    font-size: 32px;
+    font-size: 48px;
+    margin: 24px 0;
 }
 
 
@@ -90,28 +106,71 @@ p.timeLeftTime,p.timeLeftHeaderP{
     text-align: center;
 }
 
-a.timeLeftA{
+p.timeLeftHeaderP{
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+p.timeLeftTime{
+    font-size: 54px;
+    margin: 20px 0 80px 0;
+}
+
+a.timeLeftA, a.timeLeftA:link{
     display: flex;
     justify-content: center;
     color: #F9F9F9;
     width: 100%;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 20px 0 90px 0;
+}
+a.timeLeftA p{
+    border-bottom: 2px solid #f9f9f993;
+}
+
+a:-webkit-any-link{
+/*    text-decoration: none;*/
 }
 
 a.viewMoreA{
     display: flex;
     justify-content: center;
     color:#f9f9f9;
+    text-decoration:none;
+    font-size: 32px;
+    margin: 20px 0 90px 0;
 }
-form.contactForm input, form.contactForm textarea{
+a.viewMoreA p{
+    
+    border-bottom: 2px solid #f9f9f993;
+}
+form.contactForm input{
+    padding: 0;
+    border: 0;
+    display:block;
+    margin: 25px auto;
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    
+}
+
+form.contactForm textarea{
     padding: 0;
     border: 0;
     display:block;
     margin: 10px auto;
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    
 }
 form.contactForm button{
     padding: 0;
     border: 0;
     display: block;
+    margin: 20px 0 90px 0;
     margin: 0 auto;
 }
 
@@ -120,4 +179,79 @@ form.contactForm button{
 }
 .nav-list li:nth-of-type(2){
     float: right;
+}
+
+.upcommingEventsContent div{
+    margin: 35px 0;
+}
+
+.upcommingEventsContent div div.infoContent{
+    text-align: center;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.upcommingEventsContent div div.infoContent hr{
+    border: 0;
+/*    background-color: #f9f9f9;*/
+    border-bottom: 2px solid #f9f9f973;
+}
+
+.upcommingEventsContent div div.infoContent p:nth-of-type(1){
+    font-size: 32px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.upcommingEventsContent div div.infoContent p{
+    width: 90%;
+    margin: 10px 0;
+}
+
+.rocketImg{
+    height: 64px;
+    display: block;
+    margin: 0 auto;
+}
+
+.upcommingEventsContent{
+    width: 900px;
+    margin: 0 auto;
+}
+
+form.contactForm input{
+    height: 40px;
+    background-color: transparent;
+    border-bottom: 2px solid #f9f9f973;
+    color:#f9f9f9;
+/*    background: url(../img/graph/rocketNext.svg) no-repeat scroll 100% 0px;*/
+    transition: 0.3s;
+}
+
+form.contactForm input{
+        background: url(../img/graph/WHITEtranspSUCCESSsvg.svg) no-repeat scroll 115% -4px;
+
+}
+
+form.contactForm input:focus{
+        background: url(../img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px;
+
+}
+/*
+form.contactForm input:nth-child(3){
+        background: url(../img/graph/WHITEtranspSUCCESSsvg.svg)     no-repeat scroll 100% -4px;
+
+}
+*/
+form.contactForm textarea.textAreaContactForm{
+    height:100%;
+    background-color: transparent;
+    border-bottom: 2px solid #f9f9f973;
+    color:#f9f9f9;
+    transition: 0.3s;
+}
+
+form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focus{
+    border-bottom: 2px solid #f9f9f9;
+    transition: 0.3s;
 }

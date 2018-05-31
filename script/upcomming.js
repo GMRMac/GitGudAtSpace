@@ -30,7 +30,7 @@ function displayCommingLaunches(myJson,divName){
         }
         var dato = unixDate.getMonth();
         console.log(dato);
-        launchesDiv.innerHTML +="<div class='collum-tablet-4'>" + o.mission_name + "<br>" + o.rocket.rocket_name + "<br>" + dayUnixDate+"/"+monthUnixDate +"/"+ unixDate.getFullYear() + "<hr></div>";
+        launchesDiv.innerHTML +="<div class='collum-tablet-4'><div class='infoContent'>" + o.mission_name + "<br>" + o.rocket.rocket_name + "<br>" + dayUnixDate+"/"+monthUnixDate +"/"+ unixDate.getFullYear() + "<hr></div></div>";
     }
     
 }

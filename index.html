@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style/library.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300" rel="stylesheet">
 </head>
 <body onresize="logoPlacement()" onload="logoPlacement()">
     <div class="container">
@@ -57,18 +57,20 @@
                 <p class="timeLeftTime"></p>
             </div>
         </div>
-        <a href="#!" class="timeLeftA">learn more</a>    
+        <a href="#!" class="timeLeftA"><p>Learn more</p></a>    
         
         <h2>Upcomming events</h2>
         <div class="upcommingEventsContent row"></div>
-        <a href="#!" class="viewMoreA">VIEW MORE</a>
+        <a href="#!" class="viewMoreA"><p>VIEW MORE</p></a>
         
+        <h2>Contact us</h2>
         <form class="contactForm" action="">
-            <input class="collum-tablet-5" type="text">
-            <input class="collum-tablet-5" type="text">
-            <input class="collum-tablet-5" type="text">
-            <input class="collum-tablet-5" type="text">
-            <textarea class="collum-tablet-5" name="" id=""></textarea>
+            <input class="collum-tablet-4 inputContactForm" placeholder="First name" type="text">
+            <input class="collum-tablet-4 inputContactForm" placeholder="Last name" type="text">
+            <input class="collum-tablet-4 inputContactForm" placeholder="Phone number" type="number">
+            <input class="collum-tablet-4 inputContactForm" placeholder="E-mail" type="text">
+            <input class="collum-tablet-4 inputContactForm" placeholder="Subject" type="text">
+            <textarea class="collum-tablet-4 textAreaContactForm" placeholder="Your message..." name="" id=""></textarea>
             <button>SEND</button>
         </form>
         <footer>
@@ -89,12 +91,59 @@
     <script src="script/menu.js"></script>
     <script>
         function logoPlacement(){
-            var logoWidth = document.getElementsByClassName("container")[0].offsetWidth;
-            var logoW = document.getElementsByClassName("logoImg")[0].offsetWidth;
-            var logo = document.getElementsByClassName("logoImg")[0];
+            var logoWidth = document.getElementsByClassName("container")[0].offsetWidth,
+                logoW = document.getElementsByClassName("logoImg")[0].offsetWidth,
+                logo = document.getElementsByClassName("logoImg")[0];
+            
             logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
             console.log(logoWidth);
         }
+        
+        var textArea = document.getElementsByClassName("textAreaContactForm")[0],
+            firstNameInput = document.getElementsByClassName("inputContactForm")[0],
+            lastNameInput = document.getElementsByClassName("inputContactForm")[1],
+            phoneInput = document.getElementsByClassName("inputContactForm")[2],
+            emailInput = document.getElementsByClassName("inputContactForm")[3],
+            nameInput = document.getElementsByClassName("inputContactForm")[4];
+        
+        firstNameInput.addEventListener("keyup", validateFirstName);
+        lastNameInput.addEventListener("keyup", validateLastName);
+        phoneInput.addEventListener("keyup", validatePhoneInput);
+        
+        function validateFirstName(){
+            if(firstNameInput.value != ""){
+                console.log("fuck off");
+                firstNameInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
+                firstNameInput.style.borderBottom = "2px solid #53d400b7";
+            }
+            else{
+                firstNameInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
+                firstNameInput.style.borderBottom = "2px solid #f9f9f973";
+            }
+        }
+        function validateLastName(){
+            if(lastNameInput.value != ""){
+                console.log("fuck off");
+                lastNameInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
+                lastNameInput.style.borderBottom = "2px solid #53d400b7";
+            }
+            else{
+                lastNameInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
+                lastNameInput.style.borderBottom = "2px solid #f9f9f973";
+            }
+        }
+        function validatePhoneInput(){
+            if(phoneInput.value != ""){
+                console.log("fuck off");
+                phoneInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
+                phoneInput.style.borderBottom = "2px solid #53d400b7";
+            }
+            else{
+                phoneInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
+                phoneInput.style.borderBottom = "2px solid #f9f9f973";
+            }
+        }
+        
     </script>
     <script src="script/countdown.js"></script>
 </body>

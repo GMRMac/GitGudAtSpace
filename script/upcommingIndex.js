@@ -30,7 +30,7 @@ function displayCommingLaunches(myJson,divName){
         }
         var dato = unixDate.getMonth();
         console.log(dato);
-        launchesDiv.innerHTML +="<div class='collum-tablet-4'>" + o.mission_name + "<br>" + o.rocket.rocket_name + "<br>" + dayUnixDate+"/"+monthUnixDate +"/"+ unixDate.getFullYear() + "<hr></div>";
+        launchesDiv.innerHTML +="<div class='collum-tablet-4'><div class='infoContent'><p>" + o.mission_name + "</p><p>" + o.rocket.rocket_name + "</p><p>" + dayUnixDate+"/"+monthUnixDate +"/"+ unixDate.getFullYear() + "</p><img class='rocketImg' src='img/graph/rocketNext.svg' alt='rocket'><hr></div></div>";
     }
     
 }
