@@ -115,16 +115,18 @@ function aFokenFunction(flightNumber,type){
         flightDetails = flightDetails + "<p>"+obj.details+"</p>";
     }
     if(obj.launch_site.site_name){flightDetails = flightDetails + "<h3>Launchsite:<h3><p>"+obj.launch_site.site_name+"</p>"}
-    var articles = "<h3>Articles<h3>";
-    if(obj.links.article_link){articles = articles + ""}
+    var articles = "<h2>Articles</h2>";
+    if(obj.links.article_link){articles = articles + "<a href='"+obj.links.article_link+"'><p>foken</p></a>"}
     var infoBanner = "<img class='InfoBannerImg'>";
     if(obj.links.mission_patch_small){
         infoBanner = "<img class='InfoBannerImg' src='"+obj.links.mission_patch_small+"'>"
     } else {
         infoBanner = "<img class='InfoBannerImg' src='http://geekmasterrated.com/SpaceXExam/img/graph/logo.svg'>";
-    };
+    }
+    console.log(obj.links);
+    if(obj.links.presskit){}
     
-    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h3>" + obj.mission_name + "</h3><h2>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h2><h2>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h2>"+flightDetails+"</div>";
+    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h3>" + obj.mission_name + "</h3><h2>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h2><h2>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h2>"+flightDetails+articles+"</div>";
     
     change();
     moveMe();
