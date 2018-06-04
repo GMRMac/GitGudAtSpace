@@ -1,12 +1,19 @@
 div.container{
     max-width: 1400px;
     margin: 0 auto;
+    
 }
 
 .row {
     
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
+  flex-wrap: wrap;
+}
+
+.row-dual {
+    
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -15,6 +22,14 @@ div.container{
   .row .collum-tablet-1, .row .collum-tablet-11, .row .collum-tablet-10, .row .collum-tablet-9, .row .collum-tablet-8, .row .collum-tablet-7, .row .collum-tablet-6, .row .collum-tablet-5, .row .collum-tablet-4, .row .collum-tablet-3, .row .collum-tablet-2, .row .collum-tablet-1 {
       width: 100%;
   }
+    
+  .row-dual .collum-tablet-1, .row-dual .collum-tablet-11, .row-dual .collum-tablet-10, .row-dual .collum-tablet-9, .row-dual .collum-tablet-8, .row-dual .collum-tablet-7, .row-dual .collum-tablet-6, .row-dual .collum-tablet-5, .row-dual .collum-tablet-4, .row-dual .collum-tablet-3, .row-dual .collum-tablet-2, .row-dual .collum-tablet-1 {
+      width: 50%;
+  }
+    
+    .disappear{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 880px) {

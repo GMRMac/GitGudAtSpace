@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
 </head>
 <body onresize="logoPlacement()" onload="logoPlacement()">
+    <div id="overlayDiv"></div>
     <div class="container">
         <div class="logoImg"><a href="index.html"><img src="img/graph/logo.svg" alt="Logo"></a></div>
         <section class="navigation">
@@ -41,15 +42,15 @@
         
         <h2>Upcomming missions</h2>
         <div class="upcommingEventsContent row"></div>
-        <a href="#!" class="viewMoreA">VIEW MORE</a>
+        <a href="#!" class="viewMoreA" onclick="displayCommingLaunches(upcommingLiftoffs, 'upcommingEventsContent')">VIEW MORE</a>
         
         <h2>Past missions</h2>
         <div class="pastEventsContent row"></div>
-        <a href="#!" class="viewMoreA">VIEW MORE</a>
+        <a href="#!" class="viewMoreA" onclick="displayCommingLaunches(previousLiftoffs, 'pastEventsContent')">VIEW MORE</a>
         
         <footer>
-           <button onclick="displayCommingLaunches(upcommingLiftoffs, 'upcommingEventsContent')"> upcomming </button>
-           <button onclick="displayCommingLaunches(previousLiftoffs, 'pastEventsContent')">past</button>
+           <button> upcomming </button>
+           <button>past</button>
             here comes a footer, idk yet
         </footer>
     </div>

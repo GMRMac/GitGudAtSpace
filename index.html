@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/library.css">
     <link rel="stylesheet" href="style/style.css">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300" rel="stylesheet">
 </head>
 <body onresize="logoPlacement()" onload="logoPlacement()">
+    <div id="testId"></div>
     <div class="container">
         <div class="logoImg"><a href="index.html"><img src="img/graph/logo.svg" alt="Logo"></a></div>
         <section class="navigation">
@@ -39,7 +41,12 @@
             </div>
         </section>
         <div class="row">
-            <div class="collum-tablet-2"></div>
+            <div class="collum-tablet-6">
+                <button onclick="aFokenFunction()">foken test</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="collum-tablet-2 disappear"></div>
             <div class="collum-tablet-2">
                 <p class="timeLeftHeaderP">Days</p>
                 <p class="timeLeftTime" id=""></p>
@@ -87,63 +94,18 @@
     <div id="pastLaunches"></div>
 -->
 
-    <script src="script/upcommingIndex.js"></script>
+    <script src="script/upcommingIndex.js" defer></script>
     <script src="script/menu.js"></script>
     <script>
-        function logoPlacement(){
-            var logoWidth = document.getElementsByClassName("container")[0].offsetWidth,
-                logoW = document.getElementsByClassName("logoImg")[0].offsetWidth,
-                logo = document.getElementsByClassName("logoImg")[0];
-            
-            logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
-            console.log(logoWidth);
-        }
-        
-        var textArea = document.getElementsByClassName("textAreaContactForm")[0],
-            firstNameInput = document.getElementsByClassName("inputContactForm")[0],
-            lastNameInput = document.getElementsByClassName("inputContactForm")[1],
-            phoneInput = document.getElementsByClassName("inputContactForm")[2],
-            emailInput = document.getElementsByClassName("inputContactForm")[3],
-            nameInput = document.getElementsByClassName("inputContactForm")[4];
-        
-        firstNameInput.addEventListener("keyup", validateFirstName);
-        lastNameInput.addEventListener("keyup", validateLastName);
-        phoneInput.addEventListener("keyup", validatePhoneInput);
-        
-        function validateFirstName(){
-            if(firstNameInput.value != ""){
-                console.log("fuck off");
-                firstNameInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
-                firstNameInput.style.borderBottom = "2px solid #53d400b7";
-            }
-            else{
-                firstNameInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
-                firstNameInput.style.borderBottom = "2px solid #f9f9f973";
-            }
-        }
-        function validateLastName(){
-            if(lastNameInput.value != ""){
-                console.log("fuck off");
-                lastNameInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
-                lastNameInput.style.borderBottom = "2px solid #53d400b7";
-            }
-            else{
-                lastNameInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
-                lastNameInput.style.borderBottom = "2px solid #f9f9f973";
-            }
-        }
-        function validatePhoneInput(){
-            if(phoneInput.value != ""){
-                console.log("fuck off");
-                phoneInput.style.background = "url(img/graph/GREENtranspSUCCESSsvg.svg) no-repeat scroll 100% -4px";
-                phoneInput.style.borderBottom = "2px solid #53d400b7";
-            }
-            else{
-                phoneInput.style.background = "url(img/graph/WHITEtranspSUCCESSsvg90Transp.svg) no-repeat scroll 115% -4px";
-                phoneInput.style.borderBottom = "2px solid #f9f9f973";
-            }
-        }
-        
+
+function logoPlacement(){
+    var logoWidth = document.getElementsByClassName("container")[0].offsetWidth,
+        logoW = document.getElementsByClassName("logoImg")[0].offsetWidth,
+        logo = document.getElementsByClassName("logoImg")[0];
+
+    logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
+//            console.log(logoWidth);
+}
     </script>
     <script src="script/countdown.js"></script>
 </body>
