@@ -222,7 +222,7 @@ form.contactForm button{
 
 .upcommingEventsContent div div.infoContent p, .pastEventsContent div div.infoContent p{
     width: 90%;
-    margin: 10px 5%;
+    margin: 10px 5%    ;
 }
 
 .rocketImg{
@@ -586,7 +586,7 @@ footer .collum-computer-4{
     margin: 0 auto 25px auto;
     max-width: 450px!important;
 }   
-    .inputContactForm{
+    .inputContactForm, form.contactForm textarea{
         width: 65%;
     }
     
@@ -605,5 +605,13 @@ footer img.footerLogo{
         margin: 0 auto;
         height: 40px;
     }
+    p.timeLeftTime, .timeLeftHeaderP{
+        font-size: 34px!important;
+        margin: 20px 0 40px 0;
+    }
+    .inputContactForm, form.contactForm textarea{
+        width: 90%;
+    }
+    
 
 }
