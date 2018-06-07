@@ -286,7 +286,7 @@ form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focu
     max-height: 70%;
     background-color: #f9f9f9f9;
     color: #292929;
-    transition: 0.2s
+    transition: 0.2s;
 }
 
 

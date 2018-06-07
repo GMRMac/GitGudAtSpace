@@ -113,11 +113,11 @@
                 var btn = document.getElementsByClassName("buttonContactForm")[0];
                 if(validName && validLastName && validPhone && validEmail && validSubject && validComment){
 //                    console.log("enabled");
-                    btn.disabled = false;
+                    btn.onclick = "validateForm()"
                 }
                 else{
 //                    console.log("disabled");
-                    btn.disabled = true;
+                    btn.onclick = "";
                 }
             }
             

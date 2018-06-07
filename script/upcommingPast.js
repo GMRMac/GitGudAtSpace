@@ -114,26 +114,29 @@ function aFokenFunction(flightNumber,type){
     
     
     var flightDetails = "<h2>Details:</h2>";    
-    if(obj.details){
-        flightDetails = flightDetails + "<p>"+obj.details+"</p>";
-    }
+    if(obj.details){flightDetails = flightDetails + "<p>"+obj.details+"</p>";}
     if(obj.launch_site.site_name){flightDetails = flightDetails + "<p class='launchsiteP'>Launchsite:</p><p>"+obj.launch_site.site_name+"</p>"}
-    var articles = "<h2>Articles:</h2><div class='row'>";
-    if(obj.links.article_link){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.article_link+"'><p>Space.com article</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.reddit_campaign){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_campaign+"'><p>Reddit Campaign</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.reddit_launch){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_launch+"'><p>Reddit launch</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.reddit_media){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_media+"'><p>Reddit media</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.reddit_recovery){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_recovery+"'><p>Reddit recovery</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.wikipedia){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.wikipedia+"'><p>Wikipedia article</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
-    if(obj.links.video_link){
-        var linken = obj.links.video_link,
-            regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
-            match = linken.match(regExp);
-        
-        if (match && match[2].length == 11) {
-            match = match[2];
-            articles = articles + "</div><iframe width='100%' class='ytVideo' src='https://www.youtube.com/embed/"+match+"' frameborder='0' allow='encrypted-media' allowfullscreen></iframe>";
-        } else {}
+    
+    if(obj.links.article_link && obj.links.video_link){
+        var articles = "<h2>Articles:</h2><div class='row'>";
+        if(obj.links.article_link){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.article_link+"'><p>Space.com article</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.reddit_campaign){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_campaign+"'><p>Reddit Campaign</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.reddit_launch){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_launch+"'><p>Reddit launch</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.reddit_media){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_media+"'><p>Reddit media</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.reddit_recovery){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.reddit_recovery+"'><p>Reddit recovery</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.wikipedia){articles = articles + "<div class='collum-tablet-6'><a target='_blank' href='"+obj.links.wikipedia+"'><p>Wikipedia article</p><img class='rocketImg' src='img/graph/rocketNextBlack.svg' alt='rocket'></a></div>"}
+        if(obj.links.video_link){
+            var linken = obj.links.video_link,
+                regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
+                match = linken.match(regExp);
+
+            if (match && match[2].length == 11) {
+                match = match[2];
+                articles = articles + "</div><iframe width='100%' class='ytVideo' src='https://www.youtube.com/embed/"+match+"' frameborder='0' allow='encrypted-media' allowfullscreen></iframe>";
+            }
+        }
+    } else {
+        articles = "<div style='height:35px;'></div>";
     }
     
     var infoBanner = "<img class='InfoBannerImg'>";
