@@ -204,6 +204,7 @@ form.contactForm button{
 .upcommingEventsContent div div.infoContent, .pastEventsContent div div.infoContent{
     text-align: center;
     width: 90%;
+    display: block;
     margin: 0 5%;
 }
 
@@ -216,12 +217,12 @@ form.contactForm button{
 .upcommingEventsContent div div.infoContent p:nth-of-type(1), .pastEventsContent div div.infoContent p:nth-of-type(1){
     font-size: 32px;
     font-weight: 300;
-    margin: 10px 0;
+    margin: 10px 5%;
 }
 
 .upcommingEventsContent div div.infoContent p, .pastEventsContent div div.infoContent p{
     width: 90%;
-    margin: 10px 0;
+    margin: 10px 5%;
 }
 
 .rocketImg{
@@ -481,7 +482,8 @@ img.exitMoreInfo{
     width: 2px;
     display: block;
     margin: 50px auto;
-    background-color: #f9f9f937;
+    opacity: 0.8;
+    background-color:#f9f9f9b3;
 }
 
 .timelineHeader3{
@@ -489,6 +491,70 @@ img.exitMoreInfo{
     font-weight: 300;
     text-align: center;
     margin: 25px 35px 10px 35px;
+}
+
+.linksTimeline{
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.linksTimeline .collum-tablet-6{
+    display: flex;
+    justify-content: center;
+}
+
+.linksTimeline .rocketImg{
+    height: 48px;
+    display: inline-block;
+    margin: 0;
+    margin-left: 6px;
+}
+
+.linksTimeline a{
+    margin: 20px 16.66666666666667%;
+    padding: 0px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    opacity: 0.8;
+    color:#f9f9f9;
+    border-bottom: 2px solid #f9f9f9b3;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer{
+    background-color: #00000089;
+    padding: 50px 0 150px;
+    margin-top: 150px;
+}
+footer img.footerLogo{
+    max-width: 600px;
+}
+
+footer h3{
+    font-size: 34px;
+}
+footer p, footer a{
+    font-size: 22px;
+    position: relative;
+    left:20px;
+    width: 90%;
+    color:#f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+footer hr{
+    width:100%;
+    color: #f9f9f937;
+    display: block;
+    position: relative;
+    opacity: 0.6;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 ::-webkit-scrollbar {
@@ -510,6 +576,25 @@ img.exitMoreInfo{
     background: #555; 
 }
 
+
+@media only screen and (max-width: 1000px){
+ 
+
+footer .collum-computer-4{
+    display: block;
+    margin: 0;
+    margin: 0 auto 25px auto;
+    max-width: 450px!important;
+}   
+    .inputContactForm{
+        width: 65%;
+    }
+    
+footer img.footerLogo{
+    max-width: 500px;
+}
+    
+}
 @media only screen and (max-width: 769px){
     .pastEventsContent{
         width: 100%;

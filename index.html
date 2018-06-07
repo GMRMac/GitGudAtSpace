@@ -68,17 +68,44 @@
         <h2>Contact us</h2>
         <form class="contactForm" method="get" onsubmit="return validateform()">
             <input class="collum-tablet-4 inputContactForm" placeholder="First name" type="text" required>
-            <input class="collum-tablet-4 inputContactForm" placeholder="Last name" type="text">
-            <input class="collum-tablet-4 inputContactForm" placeholder="Phone number" type="number">
-            <input class="collum-tablet-4 inputContactForm" placeholder="E-mail" type="text">
-            <input class="collum-tablet-4 inputContactForm" placeholder="Subject" type="text">
-            <textarea class="collum-tablet-4 textAreaContactForm" placeholder="Your message..." name="" id=""></textarea>
+            <input class="collum-tablet-4 inputContactForm" placeholder="Last name" type="text" required>
+            <input class="collum-tablet-4 inputContactForm" placeholder="Phone number" type="number" required>
+            <input class="collum-tablet-4 inputContactForm" placeholder="E-mail" type="text" required>
+            <input class="collum-tablet-4 inputContactForm" placeholder="Subject" type="text" required>
+            <textarea class="collum-tablet-4 textAreaContactForm" placeholder="Your message..." name="" id="" required></textarea>
             <button class="buttonContactForm">SEND</button>
         </form>
-        <footer>
-            here comes a footer, idk yet
-        </footer>
+    
     </div>
+        <footer>
+           <div class="container">
+                <div class="row">
+                    <img class="footerLogo" src="img/graph/logo.svg" alt="logo">
+                    <hr>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><h3>ROCKETS & SPACECRAFT</h3></div>
+                        <div class="collum-tablet-12"><p>FALCON 9</p></div>
+                        <div class="collum-tablet-12"><p>FALCON HEAVY</p></div>
+                        <div class="collum-tablet-12"><p>DRAGON</p></div>
+                    </div>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><h3>Contact us</h3></div>
+                        <div class="collum-tablet-12"><p>SpaceX headquarters</p></div>
+                        <div class="collum-tablet-12"><p>Rocket Road</p></div>
+                        <div class="collum-tablet-12"><p>Hawthorne, California</p></div>
+                        <div class="collum-tablet-12"><br></div>
+                        <div class="collum-tablet-12"><p>310-363-6000</p></div>
+                    </div>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><br></div>
+                        <div class="collum-tablet-12"><p>Media inquiries</p></div>
+                        <div class="collum-tablet-12"><a href="#!">media@spacex.com</a></div>
+                        <div class="collum-tablet-12"><p>Sales inquiries</p></div>
+                        <div class="collum-tablet-12"><a href="#!">sales@spacex.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 <!--
     <h1>countdown</h1>
@@ -89,8 +116,6 @@
     <div id="pastLaunches"></div>
 -->
 
-    <script src="script/upcommingIndex.js" defer></script>
-    <script src="script/menu.js"></script>
     <script>
 
 function logoPlacement(){
@@ -100,8 +125,14 @@ function logoPlacement(){
 
     logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
 //            console.log(logoWidth);
+        var InfoBannerImg = document.getElementsByClassName("footerLogo")[0],
+        width = document.getElementsByClassName("row")[2].offsetWidth,
+        InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
+        InfoBannerImg.style.marginLeft = ((width/2)-(InfoBannerImgWidth/2)) + "px";
 }
     </script>
+    <script src="script/upcommingIndex.js" defer></script>
+    <script src="script/menu.js"></script>
     <script src="script/countdown.js"></script>
     <script src="script/validate.js"></script>
 </body>

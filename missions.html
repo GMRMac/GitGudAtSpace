@@ -56,10 +56,61 @@
         <div class="pastEventsContent row"></div>
         <a href="#!" class="viewMoreA" onclick="pastI = pastI + 12; displayCommingLaunches(previousLiftoffs, 'pastEventsContent')">VIEW MORE</a>
         
-        <footer>
-            here comes a footer, idk yet
-        </footer>
     </div>
+    <footer>
+           <div class="container">
+                <div class="row">
+                    <img class="footerLogo" src="img/graph/logo.svg" alt="logo">
+                    <hr>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><h3>ROCKETS & SPACECRAFT</h3></div>
+                        <div class="collum-tablet-12"><p>FALCON 9</p></div>
+                        <div class="collum-tablet-12"><p>FALCON HEAVY</p></div>
+                        <div class="collum-tablet-12"><p>DRAGON</p></div>
+                    </div>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><h3>Contact us</h3></div>
+                        <div class="collum-tablet-12"><p>SpaceX headquarters</p></div>
+                        <div class="collum-tablet-12"><p>Rocket Road</p></div>
+                        <div class="collum-tablet-12"><p>Hawthorne, California</p></div>
+                        <div class="collum-tablet-12"><br></div>
+                        <div class="collum-tablet-12"><p>310-363-6000</p></div>
+                    </div>
+                    <div class="collum-computer-4">
+                        <div class="collum-tablet-12"><br></div>
+                        <div class="collum-tablet-12"><p>Media inquiries</p></div>
+                        <div class="collum-tablet-12"><a href="#!">media@spacex.com</a></div>
+                        <div class="collum-tablet-12"><p>Sales inquiries</p></div>
+                        <div class="collum-tablet-12"><a href="#!">sales@spacex.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+<!--
+    <h1>countdown</h1>
+    <div id="countdown"></div>
+    <h1>upcomming launches</h1>
+    <div id="launches"></div>
+    <h1>past launches</h1>
+    <div id="pastLaunches"></div>
+-->
+
+    <script>
+
+function logoPlacement(){
+    var logoWidth = document.getElementsByClassName("container")[0].offsetWidth,
+        logoW = document.getElementsByClassName("logoImg")[0].offsetWidth,
+        logo = document.getElementsByClassName("logoImg")[0];
+
+    logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
+//            console.log(logoWidth);
+        var InfoBannerImg = document.getElementsByClassName("footerLogo")[0],
+        width = document.getElementsByClassName("row")[2].offsetWidth,
+        InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
+        InfoBannerImg.style.marginLeft = ((width/2)-(InfoBannerImgWidth/2)) + "px";
+}
+    </script>
 
 <!--
     <h1>countdown</h1>
@@ -72,13 +123,4 @@
 
     <script src="script/upcommingPast.js"></script>
     <script src="script/menu.js"></script>
-    <script>
-        function logoPlacement(){
-            var logoWidth = document.getElementsByClassName("container")[0].offsetWidth;
-            var logoW = document.getElementsByClassName("logoImg")[0].offsetWidth;
-            var logo = document.getElementsByClassName("logoImg")[0];
-            logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
-            console.log(logoWidth);
-        }
-    </script>
 </body>

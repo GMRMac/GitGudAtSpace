@@ -65,6 +65,7 @@ function displayCommingLaunches(myJson,divName){
             dayUnixDate = "0" + dayUnixDate;
         }
         var monthUnixDate = unixDate.getMonth();
+        monthUnixDate = monthUnixDate+1;
         if(monthUnixDate < 10){
             monthUnixDate = "0" + monthUnixDate;
         }
@@ -105,13 +106,12 @@ function aFokenFunction(flightNumber,type){
             dayUnixDate = "0" + dayUnixDate;
         }
         var monthUnixDate = unixDate.getMonth();
+        monthUnixDate = monthUnixDate+1;
         if(monthUnixDate < 10){
             monthUnixDate = "0" + monthUnixDate;
         }
             year = unixDate.getFullYear();
     }
-    
-    
     
     var flightDetails = "<h2>Details:</h2>";    
     if(obj.details){flightDetails = flightDetails + "<p>"+obj.details+"</p>";}
@@ -145,8 +145,8 @@ function aFokenFunction(flightNumber,type){
     } else {
         infoBanner = "<img class='InfoBannerImg' src='http://geekmasterrated.com/SpaceXExam/img/graph/logo.svg'>";
     }
-    console.log(obj.links);
-    if(obj.links.presskit){}
+//    console.log(obj.links);
+//    if(obj.links.presskit){}
     
     overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h2>" + obj.mission_name + "</h2><h3>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h3><h3>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h3>"+flightDetails+articles+"</div>";
     

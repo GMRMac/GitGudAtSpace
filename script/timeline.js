@@ -48,12 +48,13 @@ function printStuff(list){
         content.innerHTML += "<p class='timelineDateP'>"+dato+"</p>";
         content.innerHTML += "<p class='timelineDetailsP'>"+list[i].details+"</p>";
         content.innerHTML += "<h3 class='timelineHeader3'>Links:</h3>";
-        if(list[i].links.article){content.innerHTML += "<a href='"+list[i].links.article+"'>space.com</a>"}
-        if(list[i].links.reddit){content.innerHTML += "<a href='"+list[i].links.reddit+"'>reddit</a>"}
-        if(list[i].links.wikipedia){content.innerHTML += "<a href='"+list[i].links.wikipedia+"'>wikipedia</a>"}
+        var article = "";
+        if(list[i].links.article){ article += "<div class='collum-tablet-4'><a href='"+list[i].links.article+"'>space.com<img class='rocketImg' src='img/graph/rocketNext.svg' alt='rocket'></a></div>"}
+        if(list[i].links.reddit){article += "<div class='collum-tablet-4'><a href='"+list[i].links.reddit+"'>reddit<img class='rocketImg' src='img/graph/rocketNext.svg' alt='rocket'></a></div>"}
+        if(list[i].links.wikipedia){article += "<div class='collum-tablet-4'><a href='"+list[i].links.wikipedia+"'>wikipedia<img class='rocketImg' src='img/graph/rocketNext.svg' alt='rocket'></a></div>"}
 //        console.log(list[i].links.article);
         if(i+1 != list.length){
-        content.innerHTML += "<div class='barrierTimeline'></div>";
+        content.innerHTML += "<div class ='row linksTimeline'>"+article+"</div><div class='barrierTimeline'></div>";
         }
     }
 }

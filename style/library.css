@@ -17,6 +17,12 @@ div.container{
   flex-wrap: wrap;
 }
 
+@media screen and (max-width: 1000px){
+    .row .collum-computer-4{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 879px){
 
   .row .collum-tablet-1, .row .collum-tablet-11, .row .collum-tablet-10, .row .collum-tablet-9, .row .collum-tablet-8, .row .collum-tablet-7, .row .collum-tablet-6, .row .collum-tablet-5, .row .collum-tablet-4, .row .collum-tablet-3, .row .collum-tablet-2, .row .collum-tablet-1 {
@@ -47,7 +53,7 @@ width: 8.33333333333333333333333333333333333333333333%;
     display: block;
 }
 
-.collum-tablet-4{
+.collum-tablet-4, .collum-computer-4{
     width: 33.333333333333333333333333333333333333333333%;
     display: block;
 }
