@@ -229,6 +229,7 @@ form.contactForm button{
     height: 64px;
     display: block;
     margin: 0 auto;
+    cursor:pointer;
 }
 
 .upcommingEventsContent, .pastEventsContent{
@@ -612,6 +613,14 @@ footer img.footerLogo{
     .inputContactForm, form.contactForm textarea{
         width: 90%;
     }
-    
+    .showMoreInfoDivDiv{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .timelineDetailsP{
+        width: 95%;
+        font-size: 24px;
+    }
 
 }
