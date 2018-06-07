@@ -44,14 +44,17 @@ function printStuff(list){
         var dato = convertUTCDateToLocalDate(new Date(list[i].event_date_utc));
 //        console.log(dato.toLocaleString());
         
-        content.innerHTML += "<h2>"+list[i].title+"</h2>";
-        content.innerHTML += "<p>"+dato+"</p>";
-        content.innerHTML += "<p>"+list[i].details+"</p>";
-        content.innerHTML += "<h3>Links</h3>";
+        content.innerHTML += "<h2 class='timelineHeader2'>"+list[i].title+"</h2>";
+        content.innerHTML += "<p class='timelineDateP'>"+dato+"</p>";
+        content.innerHTML += "<p class='timelineDetailsP'>"+list[i].details+"</p>";
+        content.innerHTML += "<h3 class='timelineHeader3'>Links:</h3>";
         if(list[i].links.article){content.innerHTML += "<a href='"+list[i].links.article+"'>space.com</a>"}
         if(list[i].links.reddit){content.innerHTML += "<a href='"+list[i].links.reddit+"'>reddit</a>"}
         if(list[i].links.wikipedia){content.innerHTML += "<a href='"+list[i].links.wikipedia+"'>wikipedia</a>"}
 //        console.log(list[i].links.article);
+        if(i+1 != list.length){
+        content.innerHTML += "<div class='barrierTimeline'></div>";
+        }
     }
 }
 

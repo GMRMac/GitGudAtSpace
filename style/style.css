@@ -454,6 +454,43 @@ img.exitMoreInfo{
     height: 40px;
 }
 
+.timelineHeader2{
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: 300;
+}
+
+.timelineDateP{
+    font-size: 22px;
+    margin: 5px 0 15px;
+    text-align: center;
+}
+
+.timelineDetailsP{
+    font-size: 28px;
+    margin: 5px 0 15px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    line-height: 1.4;
+    width: 70%;
+}
+
+.barrierTimeline{
+    height: 75px;
+    width: 2px;
+    display: block;
+    margin: 50px auto;
+    background-color: #f9f9f937;
+}
+
+.timelineHeader3{
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    margin: 25px 35px 10px 35px;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
