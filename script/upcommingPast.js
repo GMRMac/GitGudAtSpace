@@ -45,13 +45,14 @@ function displayCommingLaunches(myJson,divName){
 //                                            upcommingI = upcommingI + 3};
 //    if(divName == "pastEventsContent"){magicNumber = pastI;
 //                                       pastI = pastI + 3; };
+    
+    
     var whichDivName;
     if(myJsonLength <= magicNumber){return;}
     if(divName == "upcommingEventsContent"){magicNumber = upcommingI;
                                             upcommingI = upcommingI + 6;
                                             whichDivName = "upcommingEventsContent";};
-    if(divName == "pastEventsContent"){magicNumber = pastI;
-                                       pastI = pastI + 12; };
+    if(divName == "pastEventsContent"){magicNumber = pastI;};
     launchesDiv.innerHTML="";
     for(i = 0; i < magicNumber; i++){
 //        console.log(myJson[i].mission_name);
@@ -110,13 +111,31 @@ function aFokenFunction(flightNumber,type){
             year = unixDate.getFullYear();
     }
     
+    
+    
     var flightDetails = "<h2>Details:</h2>";    
     if(obj.details){
         flightDetails = flightDetails + "<p>"+obj.details+"</p>";
     }
-    if(obj.launch_site.site_name){flightDetails = flightDetails + "<h3>Launchsite:<h3><p>"+obj.launch_site.site_name+"</p>"}
-    var articles = "<h2>Articles</h2>";
-    if(obj.links.article_link){articles = articles + "<a href='"+obj.links.article_link+"'><p>foken</p></a>"}
+    if(obj.launch_site.site_name){flightDetails = flightDetails + "<p class='launchsiteP'>Launchsite:</p><p>"+obj.launch_site.site_name+"</p>"}
+    var articles = "<h2>Articles:</h2>";
+    if(obj.links.article_link){articles = articles + "<a href='"+obj.links.article_link+"'><p>Space.com article</p></a>"}
+    if(obj.links.reddit_campaign){articles = articles + "<a href='"+obj.links.reddit_campaign+"'><p>Reddit Campaign</p></a>"}
+    if(obj.links.reddit_launch){articles = articles + "<a href='"+obj.links.reddit_launch+"'><p>Reddit launch</p></a>"}
+    if(obj.links.reddit_media){articles = articles + "<a href='"+obj.links.reddit_media+"'><p>Reddit media</p></a>"}
+    if(obj.links.reddit_recovery){articles = articles + "<a href='"+obj.links.reddit_recovery+"'><p>Reddit recovery</p></a>"}
+    if(obj.links.wikipedia){articles = articles + "<a href='"+obj.links.wikipedia+"'><p>Wikipedia</p></a>"}
+    if(obj.links.video_link){
+        var linken = obj.links.video_link,
+            regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
+            match = linken.match(regExp);
+        
+        if (match && match[2].length == 11) {
+            match = match[2];
+            articles = articles + "<iframe width='100%' class='ytVideo' src='https://www.youtube.com/embed/"+match+"' frameborder='0' allow='encrypted-media' allowfullscreen></iframe>";
+        } else {}
+    }
+    
     var infoBanner = "<img class='InfoBannerImg'>";
     if(obj.links.mission_patch_small){
         infoBanner = "<img class='InfoBannerImg' src='"+obj.links.mission_patch_small+"'>"
@@ -126,61 +145,60 @@ function aFokenFunction(flightNumber,type){
     console.log(obj.links);
     if(obj.links.presskit){}
     
-    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h3>" + obj.mission_name + "</h3><h2>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h2><h2>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h2>"+flightDetails+articles+"</div>";
+    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h2>" + obj.mission_name + "</h2><h3>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h3><h3>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h3>"+flightDetails+articles+"</div>";
     
     change();
-    moveMe();
-    
     
 }
-
-//article_link
-//:
-//"https://www.space.com/37304-liftoff-spacex-second-launch-three-days.html"
-//mission_patch
-//:
-//"https://images2.imgbox.com/3f/f0/7zaluW42_o.png"
-//mission_patch_small
-//:
-//"https://images2.imgbox.com/cd/99/lNWjUnUS_o.png"
-//presskit
-//:
-//"http://www.spacex.com/sites/spacex/files/iridium2presskit.pdf"
-//reddit_campaign
-//:
-//"https://www.reddit.com/r/spacex/comments/6bp4fj/"
-//reddit_launch
-//:
-//"https://www.reddit.com/r/spacex/comments/6j67ti/"
-//reddit_media
-//:
-//"https://www.reddit.com/r/spacex/comments/6j7va6/"
-//reddit_recovery
-//:
-//"https://www.reddit.com/r/spacex/comments/6k16ho/"
-//video_link
-//:
-//"https://www.youtube.com/watch?v=7tIwZg8F9b8"
-//wikipedia
-//:
-//"https://en.wikipedia.org/wiki/Iridium_satellite_constellation"
 
 
 function change(){
     var showMoreInfoDivBackground = document.getElementsByClassName("showMoreInfoDivBackground")[0],
         showMoreInfoDiv = document.getElementsByClassName("showMoreInfoDiv")[0],
+        InfoBannerImg = document.getElementsByClassName("InfoBannerImg")[0],
         showMoreInfoH2 = document.getElementsByClassName("showMoreInfoH2")[0],
-        showMoreInfoH3 = document.getElementsByClassName("showMoreInfoH3");
+        showMoreInfoH3 = document.getElementsByClassName("showMoreInfoH3"),
+        ytvid = document.getElementsByClassName("ytVideo")[0],
+        showMoreInfoDivDiv = document.getElementsByClassName("showMoreInfoDivDiv")[0],
+        windowWitdh = window.innerWidth,
+        windowsHeight = window.innerHeight;
+
+    showMoreInfoDivDiv.style.marginTop = (windowsHeight/100)*17 + "px";
+    
+    if(ytvid){
+        var ytvidoffsetwidth = ytvid.offsetWidth;
+        ytvid.style.height = (ytvidoffsetwidth * 0.5625) + "px";
+        console.log(ytvid);
+    }
+    
     
     showMoreInfoDivBackground.style.height = document.body.clientHeight + "px";
 //    showMoreInfoDiv.style.height = document.body.clientHeight + "px";
-    showMoreInfoDivBackground.style.backgroundColor = "#000000C3";
-    
-    
+    showMoreInfoDivBackground.style.backgroundColor = "#00000073";
+//    console.log(InfoBannerImgWidth);
+
+    if(InfoBannerImg.src == "http://geekmasterrated.com/SpaceXExam/img/graph/logo.svg"){
+    getImage(windowWitdh, windowsHeight);} else {
+        
+    var InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
+    InfoBannerImg.style.marginTop = (windowsHeight/100)*1.5 + "px";
+    InfoBannerImg.style.height = (windowsHeight/100)*14.25 + "px";
+    }
 }
-function moveMe(){
-//    var showMoreInfoDivDiv = document.getElementsByClassName("showMoreInfoImage")[0];
-//    showMoreInfoDivDiv.style.marginTop = "0px";
+function getImage(width, height){
+    
+    var InfoBannerImg = document.getElementsByClassName("InfoBannerImg")[0],
+        InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
+    InfoBannerImg.style.marginLeft = ((width/2)-(InfoBannerImgWidth/2)) + "px";
+    InfoBannerImg.style.marginTop = (height/100)*1.5 + "px";
+    InfoBannerImg.style.height = (height/100)*14.25 + "px";
+    setTimeout(function(){
+        var InfoBannerImg = document.getElementsByClassName("InfoBannerImg")[0],
+            InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
+        InfoBannerImg.style.marginLeft = ((width/2)-(InfoBannerImgWidth/2)) + "px";
+        InfoBannerImg.style.marginTop = (height/100)*1.5 + "px";
+        InfoBannerImg.style.height = (height/100)*14.25 + "px";
+    },10)
 }
 function removeStuff(){
     var overlayDiv = document.getElementById("overlayDiv"),
@@ -193,6 +211,41 @@ function removeStuff(){
                           showMoreInfoDivDiv.style.opacity = "0";
                           showMoreInfoDivBackground.style.backgroundColor = "transparent";},250);
     setTimeout(function(){overlayDiv.innerHTML = "";},450);
+}
+
+function displayTimelineDifferently(){
+    var changeTimelineSelect = document.getElementsByClassName("changeTimelineSelect")[0],
+        list;
+    
+    
+    if(changeTimelineSelect.value == "oldNew"){
+        list = previousLiftoffs.sort(predicateBy("launch_date_unix"));
+        return displayCommingLaunches(list, "pastEventsContent");
+    } 
+    list = previousLiftoffs.sort(predicateByOposite("launch_date_unix"));
+    return displayCommingLaunches(list, "pastEventsContent");
+    
+}
+
+function predicateBy(prop){
+   return function(a,b){
+      if( a[prop] > b[prop]){
+          return 1;
+      }else if( a[prop] < b[prop] ){
+          return -1;
+      }
+      return 0;
+   }
+}
+function predicateByOposite(prop){
+   return function(a,b){
+      if( a[prop] < b[prop]){
+          return 1;
+      }else if( a[prop] > b[prop] ){
+          return -1;
+      }
+      return 0;
+   }
 }
 
 //launchesDiv.innerHTML +="<div class='collum-tablet-4'><div class='infoContent'><p>" + o.mission_name + "</p><p>" + o.rocket.rocket_name + "</p><p>" + dayUnixDate+"/"+monthUnixDate +"/"+ unixDate.getFullYear() + "</p><img onclick='aFokenFunction()' class='rocketImg' src='img/graph/rocketNext.svg' alt='rocket'><hr></div></div>"

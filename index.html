@@ -41,11 +41,6 @@
             </div>
         </section>
         <div class="row">
-            <div class="collum-tablet-6">
-                <button onclick="aFokenFunction()">foken test</button>
-            </div>
-        </div>
-        <div class="row">
             <div class="collum-tablet-2 disappear"></div>
             <div class="collum-tablet-2">
                 <p class="timeLeftHeaderP">Days</p>
@@ -64,21 +59,21 @@
                 <p class="timeLeftTime"></p>
             </div>
         </div>
-        <a href="#!" class="timeLeftA"><p>Learn more</p></a>    
+        <div class="learnMoreTimeLeftDiv"></div>   
         
         <h2>Upcomming events</h2>
         <div class="upcommingEventsContent row"></div>
         <a href="#!" class="viewMoreA"><p>VIEW MORE</p></a>
         
         <h2>Contact us</h2>
-        <form class="contactForm" action="">
+        <form class="contactForm" method="get" onsubmit="return validateform()">
             <input class="collum-tablet-4 inputContactForm" placeholder="First name" type="text">
             <input class="collum-tablet-4 inputContactForm" placeholder="Last name" type="text">
             <input class="collum-tablet-4 inputContactForm" placeholder="Phone number" type="number">
             <input class="collum-tablet-4 inputContactForm" placeholder="E-mail" type="text">
             <input class="collum-tablet-4 inputContactForm" placeholder="Subject" type="text">
             <textarea class="collum-tablet-4 textAreaContactForm" placeholder="Your message..." name="" id=""></textarea>
-            <button>SEND</button>
+            <button class="buttonContactForm" onclick="validateform()" disabled="true">SEND</button>
         </form>
         <footer>
             here comes a footer, idk yet
@@ -108,4 +103,5 @@ function logoPlacement(){
 }
     </script>
     <script src="script/countdown.js"></script>
+    <script src="script/validate.js"></script>
 </body>

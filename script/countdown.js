@@ -8,7 +8,7 @@ fetch("https://api.spacexdata.com/v2/launches/next")
 .then(function(myJson){
     console.log(myJson);
     var launchdate = myJson.launch_date_unix;
-    test(launchdate);
+    test(launchdate,myJson.flight_number);
 })
 
 //console.log(launchdate);
@@ -36,13 +36,16 @@ fetch("https://api.spacexdata.com/v2/launches/next")
 
 
 
-function test(launchDate){
+function test(launchDate,flightNumber){
 
 var launchDateUnixTest = new Date(launchDate*1000),
+    learnMoreTimeLeftDiv = document.getElementsByClassName("learnMoreTimeLeftDiv")[0],
     now = new Date();
     
-    console.log(now);
-    console.log(launchDateUnixTest);
+    learnMoreTimeLeftDiv.innerHTML = "<a href='#!' class='timeLeftA' onclick='aFokenFunction("+flightNumber+",&#34;upcommingEventsContent&#34;)'><p>View more</p></a>"
+    
+//    console.log(now);
+//    console.log(launchDateUnixTest);
     
 //var timestamp = (Date.now()+launchDate/1000) - (Date.now());
 var timestamp = launchDateUnixTest - now;

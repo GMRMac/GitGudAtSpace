@@ -50,6 +50,14 @@ table {
 }
   html {
   box-sizing: border-box;
+    
+    background-image: url("../img/graph/background.svg");
+
+    
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
 }
 
 input::-webkit-outer-spin-button,
@@ -76,10 +84,10 @@ body{
     background-image: url("../img/graph/background.svg");
 
     
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 h2{
@@ -274,12 +282,42 @@ form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focu
     width: 60%;
     z-index: 251!important;
     overflow-y: scroll;
-    margin: 15% 20%;
+    margin: 0 20% 0 20%;
     max-height: 70%;
     background-color: #f9f9f9f9;
     color: #292929;
     transition: 0.2s
 }
+
+
+.showMoreInfoDivDiv h2{
+    font-weight: 300;
+    margin: 50px 0 5px 0;
+}
+
+.showMoreInfoDivDiv h3{
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px 35px 10px 35px;
+}
+
+.showMoreInfoDivDiv p.launchsiteP{
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.showMoreInfoDivDiv p{
+    font-size: 26px;
+    font-weight: 200;
+    text-align: center;
+    margin: 5px 70px 0 70px;
+}
+
+
 
 .showMoreInfoDivBackground{
     position: fixed;
@@ -290,10 +328,6 @@ form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focu
     transition: 0.5s;
 }
 
-.showMoreInfoImage{
-    margin-top: 5000px;
-    transition: 1.5s ease-out;
-}
 
 img.exitMoreInfo{
     position: absolute;
@@ -326,8 +360,87 @@ img.exitMoreInfo{
 
 .InfoBannerImg{
     display: block;
+    margin: 0 auto;
     position: relative;
-    margin: 1.5% auto;
-    max-height: 12%;
+/*    height: 6%!important;*/
     max-width: 50%;
+}
+
+.changeTimelineSelect{
+    display: block;
+    border: 0;
+    background-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    color:#f9f9f9D7;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #f9f9f973;
+}
+
+.changeTimelineSelect option{
+    float: right;
+    border: 0;
+    background-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    color:#292929;
+    line-height: 1;
+    background-color: #f9f9f9;
+}
+
+.selectOptionSort label{
+    
+    background-color: transparent;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    color:#f9f9f9D7;
+    line-height: 1;
+    margin: 6px;
+}
+
+
+.selectOptionSort{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+    height: 40px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+@media only screen and (max-width: 769px){
+    .pastEventsContent{
+        width: 100%;
+    }
+    .selectOptionSort{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        height: 40px;
+    }
+
 }

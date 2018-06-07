@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/library.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300" rel="stylesheet">
 </head>
 <body onresize="logoPlacement()" onload="logoPlacement()">
     <div class="container">
@@ -39,7 +40,15 @@
             </div>
         </section>
         
-        <h2>Timeline</h2>
+        <h2>History / milestones</h2>
+        <div class="selectOptionSort">
+           <label>Sort by</label>
+            <select name="" class="changeTimelineSelect" onchange="displayTimelineDifferently()">
+                <option value="oldNew">Date: old-new</option>
+                <option value="newOld">Date: new-old</option>
+            </select>
+        </div>
+        <div class="content"></div>
         <footer>
             here comes a footer, idk yet
         </footer>
@@ -54,8 +63,9 @@
     <div id="pastLaunches"></div>
 -->
 
-    <script src="script/upcomming.js"></script>
+   
     <script src="script/menu.js"></script>
+    <script src="script/timeline.js"></script>
     <script>
         function logoPlacement(){
             var logoWidth = document.getElementsByClassName("container")[0].offsetWidth;
@@ -65,5 +75,4 @@
             console.log(logoWidth);
         }
     </script>
-    <script src="script/countdown.js"></script>
 </body>
