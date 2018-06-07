@@ -317,6 +317,47 @@ form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focu
     margin: 5px 70px 0 70px;
 }
 
+.showMoreInfoDivDiv .collum-tablet-6{
+    display: flex;
+    justify-content: center;
+}
+.showMoreInfoDivDiv .collum-tablet-6 p{
+    margin: 0;
+    display: inline-block;
+}
+.showMoreInfoDivDiv .collum-tablet-6 a{
+    margin: 20px auto;
+    padding: 0px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    opacity: 0.8;
+    color:#191919;
+    border-bottom: 2px solid #19191939;
+    text-decoration: none;
+    transition: 0.3s;
+    
+
+}
+.showMoreInfoDivDiv .collum-tablet-6 a .rocketImg{
+    height: 48px;
+    display: inline-block;
+    margin: 0;
+    margin-left: 6px;
+    
+
+}
+.showMoreInfoDivDiv .collum-tablet-6 a:hover{
+/*    background-color: #efefef;*/
+    border-bottom: 2px solid #191919;
+    color:#191919;
+    transition: 0.3s;
+    opacity: 1;
+    
+
+}
+
 
 
 .showMoreInfoDivBackground{
