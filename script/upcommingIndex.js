@@ -76,7 +76,7 @@ function aFokenFunction(flightNumber,type){
 //    console.log(obj.links);
 //    if(obj.links.presskit){}
     
-    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"</div><div class='showMoreInfoDivDiv'><h2>" + obj.mission_name + "</h2><h3>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h3><h3>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h3>"+flightDetails+articles+"</div>";
+    overlayDiv.innerHTML = "<div class='showMoreInfoDivBackground' onclick='removeStuff()'>"+infoBanner+"<img class='exitThis' src='../img/graph/X.svg'></div><div class='showMoreInfoDivDiv'><h2>" + obj.mission_name + "</h2><h3>Flight " + obj.flight_number + ", " + obj.rocket.rocket_name + "</h3><h3>"+dayUnixDate+"/"+monthUnixDate+"/"+year+"</h3>"+flightDetails+articles+"</div>";
     
     change();
     

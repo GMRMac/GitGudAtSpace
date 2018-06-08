@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Mac's SpaceX Exam">
+    <meta name="keywords" content="space,spacex,exam">
+    <meta name="author" content="Marius Johnsen Davidsen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/library.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/graph/rocketNextBlack.png" type="image/gif" sizes="16x16">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300" rel="stylesheet">
 </head>
@@ -40,7 +47,7 @@
                 </nav>
             </div>
         </section>
-        <div class="row">
+        <div class="row-dual">
             <div class="collum-tablet-2 disappear"></div>
             <div class="collum-tablet-2">
                 <p class="timeLeftHeaderP">Days</p>
@@ -126,7 +133,7 @@ function logoPlacement(){
     logo.style.marginLeft = ((logoWidth/2)-(logoW/2)) + "px";
 //            console.log(logoWidth);
         var InfoBannerImg = document.getElementsByClassName("footerLogo")[0],
-        width = document.getElementsByClassName("row")[2].offsetWidth,
+        width = document.getElementsByClassName("row")[1].offsetWidth,
         InfoBannerImgWidth = InfoBannerImg.offsetWidth*0.8181818181818181;
         InfoBannerImg.style.marginLeft = ((width/2)-(InfoBannerImgWidth/2)) + "px";
 }
@@ -136,3 +143,4 @@ function logoPlacement(){
     <script src="script/countdown.js"></script>
     <script src="script/validate.js"></script>
 </body>
+</html>

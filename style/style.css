@@ -372,13 +372,14 @@ form.contactForm input:focus, form.contactForm textarea.textAreaContactForm:focu
 }
 
 
-img.exitMoreInfo{
+img.exitThis{
     position: absolute;
     right: 0;
-    margin: 40px 80px 0 0;
+    margin: 40px 120px 0 0;
     float: right;
     display: block;
     width: 80px;
+    top: 0;
     z-index: 500!important;
     transition: 0.5s;
 }
@@ -591,6 +592,10 @@ footer .collum-computer-4{
         width: 65%;
     }
     
+img.exitThis{
+    margin: 40px 40px 0 0;
+}
+    
 footer img.footerLogo{
     max-width: 500px;
 }
@@ -613,6 +618,11 @@ footer img.footerLogo{
     .inputContactForm, form.contactForm textarea{
         width: 90%;
     }
+img.exitThis{
+    margin: 40px 40px 0 0;
+    width: 40px;
+}
+    
     .showMoreInfoDivDiv{
         width: 90%;
         margin-left: 5%;
@@ -621,6 +631,10 @@ footer img.footerLogo{
     .timelineDetailsP{
         width: 95%;
         font-size: 24px;
+    }a.timeLeftA, a.timeLeftA:link{
+        font-size: 26px;
     }
-
+    h2{
+        font-size: 42px;
+    }
 }
